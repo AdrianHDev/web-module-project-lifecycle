@@ -67,8 +67,8 @@ class Usercard extends React.Component {
             <p>{this.props.user.public_repos}</p>
           </InfoDiv>
         </SideBySideDiv>
+        <h2>Followed by:</h2>
         <SideBySideDiv>
-          <h2>Followed by:</h2>
           {this.props.followers.map((follower) => {
             return (
               <InfoDiv key={follower.id}>
