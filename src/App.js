@@ -3,6 +3,7 @@ import Usercard from "./Components/Usercard";
 import styled from "styled-components";
 import React from "react";
 
+
 const StyledPage = styled.div`
   position: fixed;
   top: 0;
@@ -19,41 +20,41 @@ const StyledPage = styled.div`
 
 const initialState = {
   user: {
-    avatar_url: "https://avatars.githubusercontent.com/u/13549227?v=4",
-    bio: "Yep, that's me!",
+    avatar_url: "",
+    bio: "",
     blog: "",
     company: null,
-    created_at: "2015-07-29T03:53:23Z",
+    created_at: "",
     email: null,
-    events_url: "https://api.github.com/users/AdrianHDev/events{/privacy}",
-    followers: 6,
-    followers_url: "https://api.github.com/users/AdrianHDev/followers",
+    events_url: "",
+    followers: 0,
+    followers_url: "",
     following: 13,
     following_url:
-      "https://api.github.com/users/AdrianHDev/following{/other_user}",
-    gists_url: "https://api.github.com/users/AdrianHDev/gists{/gist_id}",
+      "",
+    gists_url: "",
     gravatar_id: "",
     hireable: null,
-    html_url: "https://github.com/AdrianHDev",
-    id: 13549227,
-    location: "Saint Thomas, PA",
-    login: "AdrianHDev",
-    name: "Adrian Henson",
-    node_id: "MDQ6VXNlcjEzNTQ5MjI3",
-    organizations_url: "https://api.github.com/users/AdrianHDev/orgs",
-    public_gists: 1,
-    public_repos: 40,
+    html_url: "",
+    id: 0,
+    location: "",
+    login: "",
+    name: "",
+    node_id: "",
+    organizations_url: "",
+    public_gists: 0,
+    public_repos: 0,
     received_events_url:
-      "https://api.github.com/users/AdrianHDev/received_events",
-    repos_url: "https://api.github.com/users/AdrianHDev/repos",
+      "",
+    repos_url: "",
     site_admin: false,
     starred_url:
-      "https://api.github.com/users/AdrianHDev/starred{/owner}{/repo}",
-    subscriptions_url: "https://api.github.com/users/AdrianHDev/subscriptions",
+      "",
+    subscriptions_url: "",
     twitter_username: null,
-    type: "User",
-    updated_at: "2021-05-31T17:08:53Z",
-    url: "https://api.github.com/users/AdrianHDev",
+    type: "",
+    updated_at: "",
+    url: "",
   },
   followers: [
     {
@@ -206,6 +207,11 @@ class App extends React.Component {
     super();
     this.state = initialState;
   }
+
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <StyledPage>
