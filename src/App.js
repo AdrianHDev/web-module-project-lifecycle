@@ -17,7 +17,7 @@ const StyledPage = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+/* Initial state for quick reference of structure */
 const initialState = {
   user: {
     avatar_url: "",
@@ -87,7 +87,6 @@ class App extends React.Component {
     axios.get("https://api.github.com/users/AdrianHDev").then((res) => {
       this.setState({ ...this.state, user: res.data });
       axios.get(res.data.followers_url).then((res) => {
-        console.log(res);
         this.setState({ ...this.state, followers: res.data });
       });
     });

@@ -24,6 +24,13 @@ const StyledPfp = styled.img`
   border-radius: 75px;
 `;
 
+const StyledFollowerPfp = styled.img`
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+`;
+
 const StyledHeader = styled.h1`
   margin: auto;
   font-size: 5rem;
@@ -61,14 +68,18 @@ class Usercard extends React.Component {
           </InfoDiv>
         </SideBySideDiv>
         <SideBySideDiv>
-            <h2>Followed by:</h2>
-            {this.props.followers.map(follower => {
-                return (
-                    <InfoDiv key={follower.id}>
-                        <h3>{follower.login}</h3>
-                    </InfoDiv>
-                )
-            })}
+          <h2>Followed by:</h2>
+          {this.props.followers.map((follower) => {
+            return (
+              <InfoDiv key={follower.id}>
+                <StyledFollowerPfp
+                  alt={`${follower.login}'s Profile Picture`}
+                  src={follower.avatar_url}
+                />
+                <h3>{follower.login}</h3>
+              </InfoDiv>
+            );
+          })}
         </SideBySideDiv>
       </StyledCard>
     );
