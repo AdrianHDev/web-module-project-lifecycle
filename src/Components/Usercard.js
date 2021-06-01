@@ -17,11 +17,6 @@ const SideBySideDiv = styled.div`
   align-items: left;
 `;
 
-const CenteredSideBySideDiv = styled.div`
-  display: flex;
-  align-items: left;
-`;
-
 const StyledPfp = styled.img`
   width: 12rem;
   height: 12rem;
@@ -51,7 +46,7 @@ class Usercard extends React.Component {
           <StyledPfp src={this.props.user.avatar_url} />
           <StyledHeader>{this.props.user.name}</StyledHeader>
         </SideBySideDiv>
-        <CenteredSideBySideDiv>
+        <SideBySideDiv>
           <InfoDiv>
             <h2>Bio:</h2>
             <p>{this.props.user.bio}</p>
@@ -64,7 +59,17 @@ class Usercard extends React.Component {
             <h2>Public Repositories:</h2>
             <p>{this.props.user.public_repos}</p>
           </InfoDiv>
-        </CenteredSideBySideDiv>
+        </SideBySideDiv>
+        <SideBySideDiv>
+            <h2>Followed by:</h2>
+            {this.props.followers.map(follower => {
+                return (
+                    <InfoDiv key={follower.id}>
+                        <h3>{follower.login}</h3>
+                    </InfoDiv>
+                )
+            })}
+        </SideBySideDiv>
       </StyledCard>
     );
   }
